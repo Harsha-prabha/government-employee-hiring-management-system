@@ -1,0 +1,12 @@
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/DepartmentRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/InterviewFeedbackRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/JobOpening.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/JobApplication.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/JobApplicationRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/JobPosition.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/User.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/InterviewFeedback.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Department.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/JobPositionRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/UserRepository.java
