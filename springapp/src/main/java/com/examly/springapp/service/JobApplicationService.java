@@ -1,5 +1,6 @@
-// package com.examly.springapp.service;
+package com.examly.springapp.service;
 
-// public class JobApplicationService {
-    
-// }
+public class JobApplicationService {
+  
+}
+

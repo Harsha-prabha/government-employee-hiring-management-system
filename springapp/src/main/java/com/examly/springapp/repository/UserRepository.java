@@ -3,7 +3,8 @@ package com.examly.springapp.repository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository {
-    
+public class UserRepository {
 }
+
+
 

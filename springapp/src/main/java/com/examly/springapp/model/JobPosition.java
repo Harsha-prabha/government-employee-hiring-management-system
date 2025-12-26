@@ -1,88 +1,58 @@
-
-
 package com.examly.springapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class JobPosition {
+
  @Id
  @GeneratedValue(strategy = GenerationType.AUTO)
- private int positionId;
+ private Long jobPositionId;
+
  private String positionTitle;
  private String description;
  private String location;
+ private String experienceRequired;
  private int openings;
 
  @ManyToOne
- @JoinColumn(name = "departmentId")
  private Department department;
 
- public int getPositionId() {
-  return positionId;
+ public JobPosition() {}
+
+ public Long getJobPositionId() { return jobPositionId; }
+ public void setJobPositionId(Long jobPositionId) {
+  this.jobPositionId = jobPositionId;
  }
 
- public void setPositionId(int positionId) {
-  this.positionId = positionId;
- }
-
- public String getPositionTitle() {
-  return positionTitle;
- }
-
+ public String getPositionTitle() { return positionTitle; }
  public void setPositionTitle(String positionTitle) {
   this.positionTitle = positionTitle;
  }
 
- public String getDescription() {
-  return description;
- }
-
+ public String getDescription() { return description; }
  public void setDescription(String description) {
   this.description = description;
  }
 
- public String getLocation() {
-  return location;
- }
-
+ public String getLocation() { return location; }
  public void setLocation(String location) {
   this.location = location;
  }
 
- public int getOpenings() {
-  return openings;
+ public String getExperienceRequired() { return experienceRequired; }
+ public void setExperienceRequired(String experienceRequired) {
+  this.experienceRequired = experienceRequired;
  }
 
- public void setOpenings(int openings) {
-  this.openings = openings;
- }
+ public int getOpenings() { return openings; }
+ public void setOpenings(int openings) { this.openings = openings; }
 
- public Department getDepartment() {
-  return department;
- }
-
+ public Department getDepartment() { return department; }
  public void setDepartment(Department department) {
   this.department = department;
  }
-
- public JobPosition(int positionId, String positionTitle, String description, String location, int openings,
-   Department department) {
-  this.positionId = positionId;
-  this.positionTitle = positionTitle;
-  this.description = description;
-  this.location = location;
-  this.openings = openings;
-  this.department = department;
- }
-
- public JobPosition() {
- }
-
- 
 }
+
+
+
