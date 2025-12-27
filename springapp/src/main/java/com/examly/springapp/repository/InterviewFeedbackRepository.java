@@ -1,10 +1,24 @@
+// package com.examly.springapp.repository;
+
+// import org.springframework.stereotype.Repository;
+
+// @Repository
+// public class InterviewFeedbackRepository {
+// }
+
+
 package com.examly.springapp.repository;
 
+import com.examly.springapp.model.InterviewFeedback;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public class InterviewFeedbackRepository {
+public interface InterviewFeedbackRepository extends JpaRepository<InterviewFeedback, Long> {
+    // List<InterviewFeedback> findByJobApplication_ApplicationId(Long applicationId);
+    List<InterviewFeedback> findByJobApplication_ApplicationId(Long applicationId);
+
 }
-
-
 

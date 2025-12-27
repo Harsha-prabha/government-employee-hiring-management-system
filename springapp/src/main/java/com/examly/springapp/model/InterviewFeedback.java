@@ -1,78 +1,134 @@
+// package com.examly.springapp.model;
+
+// import jakarta.persistence.*;
+
+// @Entity
+// public class InterviewFeedback {
+
+//  @Id
+//  @GeneratedValue(strategy = GenerationType.AUTO)
+//  private Long feedbackId;
+
+//  private String content;
+
+//  // ⚠️ VERY IMPORTANT
+//  private Boolean isInternal;
+
+//  private String interviewRound;
+
+//  @ManyToOne
+//  private JobApplication jobApplication;
+
+//  @ManyToOne
+//  private User user;
+
+//  public InterviewFeedback() {}
+
+//  public Long getFeedbackId() {
+//   return feedbackId;
+//  }
+
+//  public void setFeedbackId(Long feedbackId) {
+//   this.feedbackId = feedbackId;
+//  }
+
+//  public String getContent() {
+//   return content;
+//  }
+
+//  public void setContent(String content) {
+//   this.content = content;
+//  }
+
+//  // ✅ REQUIRED BY JSONPATH $.isInternal
+//  public Boolean getIsInternal() {
+//   return isInternal;
+//  }
+
+//  public void setIsInternal(Boolean isInternal) {
+//   this.isInternal = isInternal;
+//  }
+
+//  public String getInterviewRound() {
+//   return interviewRound;
+//  }
+
+//  public void setInterviewRound(String interviewRound) {
+//   this.interviewRound = interviewRound;
+//  }
+
+//  public JobApplication getJobApplication() {
+//   return jobApplication;
+//  }
+
+//  public void setJobApplication(JobApplication jobApplication) {
+//   this.jobApplication = jobApplication;
+//  }
+
+//  public User getUser() {
+//   return user;
+//  }
+
+//  public void setUser(User user) {
+//   this.user = user;
+//  }
+// }
+
+
 package com.examly.springapp.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"jobApplication","user"})
 public class InterviewFeedback {
 
- @Id
- @GeneratedValue(strategy = GenerationType.AUTO)
- private Long feedbackId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long feedbackId;
 
- private String content;
+    private String content;
+    private Boolean isInternal;
+    private String interviewRound;
 
- // ⚠️ VERY IMPORTANT
- private Boolean isInternal;
+    @ManyToOne
+    @JoinColumn(name = "application_id")
+    private JobApplication jobApplication;
 
- private String interviewRound;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
- @ManyToOne
- private JobApplication jobApplication;
+    public InterviewFeedback() {}
 
- @ManyToOne
- private User user;
+    public InterviewFeedback(Long feedbackId, String content, Boolean isInternal,
+                             String interviewRound, JobApplication jobApplication, User user) {
+        this.feedbackId = feedbackId;
+        this.content = content;
+        this.isInternal = isInternal;
+        this.interviewRound = interviewRound;
+        this.jobApplication = jobApplication;
+        this.user = user;
+    }
 
- public InterviewFeedback() {}
+    public Long getFeedbackId() { return feedbackId; }
+    public void setFeedbackId(Long feedbackId) { this.feedbackId = feedbackId; }
 
- public Long getFeedbackId() {
-  return feedbackId;
- }
+    public String getContent() { return content; }
+    public void setContent(String content) { this.content = content; }
 
- public void setFeedbackId(Long feedbackId) {
-  this.feedbackId = feedbackId;
- }
+    public Boolean getIsInternal() { return isInternal; }
+    public void setIsInternal(Boolean isInternal) { this.isInternal = isInternal; }
 
- public String getContent() {
-  return content;
- }
+    public String getInterviewRound() { return interviewRound; }
+    public void setInterviewRound(String interviewRound) { this.interviewRound = interviewRound; }
 
- public void setContent(String content) {
-  this.content = content;
- }
+    public JobApplication getJobApplication() { return jobApplication; }
+    public void setJobApplication(JobApplication jobApplication) { this.jobApplication = jobApplication; }
 
- // ✅ REQUIRED BY JSONPATH $.isInternal
- public Boolean getIsInternal() {
-  return isInternal;
- }
-
- public void setIsInternal(Boolean isInternal) {
-  this.isInternal = isInternal;
- }
-
- public String getInterviewRound() {
-  return interviewRound;
- }
-
- public void setInterviewRound(String interviewRound) {
-  this.interviewRound = interviewRound;
- }
-
- public JobApplication getJobApplication() {
-  return jobApplication;
- }
-
- public void setJobApplication(JobApplication jobApplication) {
-  this.jobApplication = jobApplication;
- }
-
- public User getUser() {
-  return user;
- }
-
- public void setUser(User user) {
-  this.user = user;
- }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 }
-
-
 

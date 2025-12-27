@@ -1,6 +1,19 @@
+// package com.examly.springapp.service;
+
+// public class JobApplicationService {
+  
+// }
+
 package com.examly.springapp.service;
 
-public class JobApplicationService {
-  
+import com.examly.springapp.model.JobApplication;
+import java.util.List;
+
+public interface JobApplicationService {
+    JobApplication addJobApplication(JobApplication jobApplication);
+    List<JobApplication> getAllJobApplications();
+    JobApplication getJobApplicationById(Long id);
+    JobApplication updateJobApplication(Long id, JobApplication jobApplication);
+    void deleteJobApplication(Long id);
 }
 
