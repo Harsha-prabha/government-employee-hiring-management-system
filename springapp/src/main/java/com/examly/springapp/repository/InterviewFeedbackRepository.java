@@ -1,11 +1,3 @@
-// package com.examly.springapp.repository;
-
-// import org.springframework.stereotype.Repository;
-
-// @Repository
-// public class InterviewFeedbackRepository {
-// }
-
 
 package com.examly.springapp.repository;
 
@@ -17,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface InterviewFeedbackRepository extends JpaRepository<InterviewFeedback, Long> {
-    // List<InterviewFeedback> findByJobApplication_ApplicationId(Long applicationId);
     List<InterviewFeedback> findByJobApplication_ApplicationId(Long applicationId);
 
 }
